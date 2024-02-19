@@ -9,6 +9,10 @@ class Product extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'name', 'price','description','category_id', 'discount_price','status'
+    ];
+
     public function technicalSpecs()
     {
         return $this->hasMany(TechnicalSpec::class,);

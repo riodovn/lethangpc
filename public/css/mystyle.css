@@ -110,7 +110,9 @@ body {
 .nav-link:hover {
     color: rgb(222, 222, 222);
 }
-
+.nav-link:focus{
+    color:#0056b3;
+}
 /* Định dạng icon của navbar-toggler */
 .navbar-toggler-icon {
     background-color: #ffffff;
@@ -252,10 +254,34 @@ img{
     border: none; /* Không có đường viền */
     border-bottom: 1px solid #ccc; /* Đường viền nhẹ ở dưới */
     padding: 5px 10px; /* Padding cho nút */
-    cursor: pointer; /* Con trỏ là pointer khi di chuột vào */
+    cursor: pointer; /* Con trỏ là ™pointer khi di chuột vào */
     transition: border-bottom-color 0.3s ease; /* Hiệu ứng chuyển tiếp cho viền dưới */
 }
 
 .btn-simple:hover {
     border-bottom-color: #999; /* Màu viền dưới khi di chuột vào */
+}
+
+.btn-cart{
+    background-color: rgb(150, 150, 150);
+    border-color: rgb(150, 150, 150);    
+}
+
+
+/* CSS cho biểu tượng giỏ hàng khi rung qua trái và rung qua phải */
+@keyframes shake {
+    0% {
+        transform: translateX(-5px); /* Rung qua trái */
+    }
+    50% {
+        transform: translateX(5px); /* Rung qua phải */
+    }
+    100% {
+        transform: translateX(-5px); /* Rung qua trái */
+    }
+}
+
+/* CSS cho biểu tượng giỏ hàng */
+.cart-icon-shake {
+    animation: shake 0.1s ease 3; /* Lặp lại vô hạn */
 }
