@@ -45,4 +45,6 @@ Route::prefix('he-thong')->group(function () {
         'show'=>'admin.warranty_policies.show'
     ]);
 
+    // Quản lý danh mục sản phẩm
+    Route::get('/categories', [AdminController::class, 'categoriesList'])->name('admin.categories');
 });

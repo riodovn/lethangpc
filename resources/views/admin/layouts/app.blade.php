@@ -6,32 +6,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>AdminLTE 3 | Dashboard</title>
 
+    {{-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"> --}}
+    <link href="{{ asset('vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="{{url('/')}}/adminLte3/dist/plugins/fontawesome-free/css/all.min.css">
+    <link rel="stylesheet" href="{{ url('/') }}/adminLte3/dist/plugins/fontawesome-free/css/all.min.css">
     <!-- Ionicons -->
     <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
     <!-- Tempusdominus Bootstrap 4 -->
-    <link rel="stylesheet" href="{{url('/')}}/adminLte3/dist/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
+    <link rel="stylesheet"
+        href="{{ url('/') }}/adminLte3/dist/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
     <!-- iCheck -->
-    <link rel="stylesheet" href="{{url('/')}}/adminLte3/dist/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url('/') }}/adminLte3/dist/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
     <!-- JQVMap -->
-    <link rel="stylesheet" href="{{url('/')}}/adminLte3/dist/plugins/jqvmap/jqvmap.min.css">
+    <link rel="stylesheet" href="{{ url('/') }}/adminLte3/dist/plugins/jqvmap/jqvmap.min.css">
     <!-- Theme style -->
-    <link rel="stylesheet" href="{{url('/')}}/adminLte3/dist/css/adminlte.min.css">
+    <link rel="stylesheet" href="{{ url('/') }}/adminLte3/dist/css/adminlte.min.css">
     <!-- overlayScrollbars -->
-    <link rel="stylesheet" href="{{url('/')}}/adminLte3/dist/plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
+    <link rel="stylesheet"
+        href="{{ url('/') }}/adminLte3/dist/plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
     <!-- Daterange picker -->
-    <link rel="stylesheet" href="{{url('/')}}/adminLte3/dist/plugins/daterangepicker/daterangepicker.css">
+    <link rel="stylesheet" href="{{ url('/') }}/adminLte3/dist/plugins/daterangepicker/daterangepicker.css">
     <!-- summernote -->
-    <link rel="stylesheet" href="{{url('/')}}/adminLte3/dist/plugins/summernote/summernote-bs4.min.css">
+    <link rel="stylesheet" href="{{ url('/') }}/adminLte3/dist/plugins/summernote/summernote-bs4.min.css">
+
+    @livewireStyles
 </head>
 
 <body class="hold-transition sidebar-mini layout-fixed">
     <style>
-        .preloader{
+        .preloader {
             display: none;
         }
     </style>
@@ -218,7 +225,7 @@
                         data-accordion="false">
                         <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
-                       
+
                         <li class="nav-header">QL sản phẩm</li>
                         <li class="nav-item">
                             <a href="pages/calendar.html" class="nav-link">
@@ -238,7 +245,7 @@
                                 </p>
                             </a>
                         </li>
-                      
+
                     </ul>
                 </nav>
                 <!-- /.sidebar-menu -->
@@ -253,7 +260,7 @@
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                            <h1 class="m-0">{{session()->get('page_title')}}</h1>
+                            <h1 class="m-0">{{ session()->get('page_title') }}</h1>
                         </div><!-- /.col -->
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
@@ -291,39 +298,49 @@
     <!-- ./wrapper -->
 
     <!-- jQuery -->
-    <script src="{{url('/')}}/adminLte3/dist/plugins/jquery/jquery.min.js"></script>
+    <script src="{{ url('/') }}/adminLte3/dist/plugins/jquery/jquery.min.js"></script>
     <!-- jQuery UI 1.11.4 -->
-    <script src="{{url('/')}}/adminLte3/dist/plugins/jquery-ui/jquery-ui.min.js"></script>
+    <script src="{{ url('/') }}/adminLte3/dist/plugins/jquery-ui/jquery-ui.min.js"></script>
     <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
     <script>
         $.widget.bridge('uibutton', $.ui.button)
     </script>
     <!-- Bootstrap 4 -->
-    <script src="{{url('/')}}/adminLte3/dist/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="{{ url('/') }}/adminLte3/dist/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
     <!-- ChartJS -->
-    <script src="{{url('/')}}/adminLte3/dist/plugins/chart.js/Chart.min.js"></script>
+    <script src="{{ url('/') }}/adminLte3/dist/plugins/chart.js/Chart.min.js"></script>
     <!-- Sparkline -->
-    <script src="{{url('/')}}/adminLte3/dist/plugins/sparklines/sparkline.js"></script>
+    <script src="{{ url('/') }}/adminLte3/dist/plugins/sparklines/sparkline.js"></script>
     <!-- JQVMap -->
-    <script src="{{url('/')}}/adminLte3/dist/plugins/jqvmap/jquery.vmap.min.js"></script>
-    <script src="{{url('/')}}/adminLte3/dist/plugins/jqvmap/maps/jquery.vmap.usa.js"></script>
+    <script src="{{ url('/') }}/adminLte3/dist/plugins/jqvmap/jquery.vmap.min.js"></script>
+    <script src="{{ url('/') }}/adminLte3/dist/plugins/jqvmap/maps/jquery.vmap.usa.js"></script>
     <!-- jQuery Knob Chart -->
-    <script src="{{url('/')}}/adminLte3/dist/plugins/jquery-knob/jquery.knob.min.js"></script>
+    <script src="{{ url('/') }}/adminLte3/dist/plugins/jquery-knob/jquery.knob.min.js"></script>
     <!-- daterangepicker -->
-    <script src="{{url('/')}}/adminLte3/dist/plugins/moment/moment.min.js"></script>
-    <script src="{{url('/')}}/adminLte3/dist/plugins/daterangepicker/daterangepicker.js"></script>
+    <script src="{{ url('/') }}/adminLte3/dist/plugins/moment/moment.min.js"></script>
+    <script src="{{ url('/') }}/adminLte3/dist/plugins/daterangepicker/daterangepicker.js"></script>
     <!-- Tempusdominus Bootstrap 4 -->
-    <script src="{{url('/')}}/adminLte3/dist/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
+    <script src="{{ url('/') }}/adminLte3/dist/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js">
+    </script>
     <!-- Summernote -->
-    <script src="{{url('/')}}/adminLte3/dist/plugins/summernote/summernote-bs4.min.js"></script>
+    <script src="{{ url('/') }}/adminLte3/dist/plugins/summernote/summernote-bs4.min.js"></script>
     <!-- overlayScrollbars -->
-    <script src="{{url('/')}}/adminLte3/dist/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
+    <script src="{{ url('/') }}/adminLte3/dist/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
     <!-- AdminLTE App -->
-    <script src="{{url('/')}}/adminLte3/dist/js/adminlte.js"></script>
+    <script src="{{ url('/') }}/adminLte3/dist/js/adminlte.js"></script>
     <!-- AdminLTE for demo purposes -->
-    <script src="{{url('/')}}/adminLte3/dist/js/demo.js"></script>
+    <script src="{{ url('/') }}/adminLte3/dist/js/demo.js"></script>
     <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-    <script src="{{url('/')}}/adminLte3/dist/js/pages/dashboard.js"></script>
+    <script src="{{ url('/') }}/adminLte3/dist/js/pages/dashboard.js"></script>
+
+    <script src="{{ asset('vendor/jquery/jquery.min.js') }}"></script>
+    <script src="{{ asset('vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+
+    {{-- <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"></script> --}}
+
+    @livewireScripts
 </body>
 
 </html>
