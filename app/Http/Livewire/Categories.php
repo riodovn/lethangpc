@@ -41,17 +41,26 @@ class Categories extends Component
             'name' => 'required|unique:categories',
         ]);
 
-        $category = new Category();
-        $category->name = $this->name;
-        $category->description = $this->description;
-        $category->save();
+        try {
+            $category = new Category();
+            $category->name = $this->name;
+            $category->description = $this->description;
+            $category->save();
 
-        session()->flash('success', 'Tạo mới danh mục thành công!');
+            session()->flash('success', 'Tạo mới danh mục thành công!');
 
-        $this->resetFields();
+            $this->resetFields();
 
-        // Hide modal after add category
-        $this->dispatchBrowserEvent('close-modal');
+            // Hide modal after add category
+            $this->dispatchBrowserEvent('close-modal');
+        } catch (\Exception $e) {
+            session()->flash('error', 'Đã có lỗi xảy ra trong quá trình tạo mới danh mục, mời bạn thao tác lại!');
+
+            $this->resetFields();
+
+            // Hide modal after add category
+            $this->dispatchBrowserEvent('close-modal');
+        }
     }
 
     public function edit($id){
@@ -68,18 +77,27 @@ class Categories extends Component
             'name' => 'required|unique:categories',
         ]);
 
-        $category = Category::where('id', $this->category_edit_id)->first();
+        try {
+            $category = Category::where('id', $this->category_edit_id)->first();
         
-        $category->name = $this->name;
-        $category->description = $this->description;
-        $category->save();
+            $category->name = $this->name;
+            $category->description = $this->description;
+            $category->save();
 
-        session()->flash('success', 'Chỉnh sửa danh mục thành công!');
+            session()->flash('success', 'Chỉnh sửa danh mục thành công!');
 
-        $this->resetFields();
+            $this->resetFields();
 
-        // Hide modal after add category
-        $this->dispatchBrowserEvent('close-modal');
+            // Hide modal after add category
+            $this->dispatchBrowserEvent('close-modal');
+        } catch (\Exception $e) {
+            session()->flash('error', 'Đã có lỗi xảy ra trong quá trình chỉnh sửa danh mục, mời bạn thao tác lại!');
+
+            $this->resetFields();
+
+            // Hide modal after add category
+            $this->dispatchBrowserEvent('close-modal');
+        }
     }
 
     public function delete($id){

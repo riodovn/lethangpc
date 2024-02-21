@@ -10,10 +10,6 @@
         </div>
     </nav>
 
-    {{-- @if ($createCategoryModal)
-        @include('livewire.categories.category-create')
-    @endif --}}
-
     <div class="card">
         <div class="card-header">
             <button type="button" class="btn btn-sm btn-primary" data-bs-toggle="modal"
@@ -26,6 +22,12 @@
             @if (session()->has('success'))
                 <div class="alert alert-success text-center">
                     {{ session('success') }}
+                </div>
+            @endif
+
+            @if (session()->has('error'))
+                <div class="alert alert-danger text-center">
+                    {{ session('error') }}
                 </div>
             @endif
 

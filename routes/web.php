@@ -47,4 +47,10 @@ Route::prefix('he-thong')->group(function () {
 
     // Quản lý danh mục sản phẩm
     Route::get('/categories', [AdminController::class, 'categoriesList'])->name('admin.categories');
+
+    // Quản lý thành viên
+    Route::get('/members', [AdminController::class, 'usersList'])->name('admin.users');
+
+    // Quản lý danh sách thông số kỹ thuật của sản phẩm
+    Route::get('/technical-specifications', [AdminController::class, 'technicalSpecificationsList'])->name('admin.technical-specifications');
 });
