@@ -1,9 +1,9 @@
 <?php return array(
     'root' => array(
         'name' => 'laravel/laravel',
-        'pretty_version' => 'v8.5.24',
-        'version' => '8.5.24.0',
-        'reference' => NULL,
+        'pretty_version' => 'dev-main',
+        'version' => 'dev-main',
+        'reference' => '8f34ba732f32481069950b4673d690af4cfd7ae2',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -59,9 +59,9 @@
             'dev_requirement' => false,
         ),
         'doctrine/inflector' => array(
-            'pretty_version' => '2.0.9',
-            'version' => '2.0.9.0',
-            'reference' => '2930cd5ef353871c821d5c43ed030d39ac8cfe65',
+            'pretty_version' => '2.0.10',
+            'version' => '2.0.10.0',
+            'reference' => '5817d0659c5b50c9b950feb9af7b9668e2c436bc',
             'type' => 'library',
             'install_path' => __DIR__ . '/../doctrine/inflector',
             'aliases' => array(),
@@ -404,9 +404,9 @@
             'dev_requirement' => false,
         ),
         'laravel/laravel' => array(
-            'pretty_version' => 'v8.5.24',
-            'version' => '8.5.24.0',
-            'reference' => NULL,
+            'pretty_version' => 'dev-main',
+            'version' => 'dev-main',
+            'reference' => '8f34ba732f32481069950b4673d690af4cfd7ae2',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
@@ -472,6 +472,15 @@
             'reference' => 'ce0f4d1e8a6f4eb0ddff33f57c69c50fd09f4301',
             'type' => 'library',
             'install_path' => __DIR__ . '/../league/mime-type-detection',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'livewire/livewire' => array(
+            'pretty_version' => 'v2.12.6',
+            'version' => '2.12.6.0',
+            'reference' => '7d3a57b3193299cf1a0639a3935c696f4da2cf92',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../livewire/livewire',
             'aliases' => array(),
             'dev_requirement' => false,
         ),
@@ -745,8 +754,8 @@
         'psr/log-implementation' => array(
             'dev_requirement' => false,
             'provided' => array(
-                0 => '1.0|2.0',
-                1 => '1.0.0 || 2.0.0 || 3.0.0',
+                0 => '1.0.0 || 2.0.0 || 3.0.0',
+                1 => '1.0|2.0',
             ),
         ),
         'psr/simple-cache' => array(
