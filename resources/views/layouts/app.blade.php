@@ -45,11 +45,8 @@
             </div>
         </div>
     </header>
-<style>
-
-
-</style>
-
+{{-- Section slider lon --}}
+{{-- Section san pham --}}
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-transparent mb-4">
         <div class="container">
@@ -76,13 +73,13 @@
         </div>
     </nav>
     
-    <div class="container">
+    <div class="">
         @yield('content')
     </div>
 
     <!-- Footer -->
     <footer class="footer">
-        <div class="container">
+        <div class="p-4">
             <div class="row">
                 <div class="col-md-3">
                     <h6>Hỗ Trợ - Dịch Vụ</h6>

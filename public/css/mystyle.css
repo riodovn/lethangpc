@@ -9,6 +9,8 @@ body {
     font-style: normal;
     font-variation-settings:
         "GRAD"0;
+    font-size: 13px;
+    font-weight: 400;
 }
 
 /* Màu chủ đạo */
@@ -105,14 +107,17 @@ body {
     /* Màu chữ trắng */
     font-size: 16px;
     /* Kích thước font 16px */
+    font-weight: 400 !important;
 }
 
 .nav-link:hover {
     color: rgb(222, 222, 222);
 }
-.nav-link:focus{
-    color:#0056b3;
+
+.nav-link:focus {
+    color: #0056b3;
 }
+
 /* Định dạng icon của navbar-toggler */
 .navbar-toggler-icon {
     background-color: #ffffff;
@@ -193,10 +198,11 @@ body {
 }
 
 .btn {
-    padding: 8px 16px;
     border-radius: 5px;
     text-decoration: none;
     transition: background-color 0.3s ease;
+    font-size: 1rem !important;
+    font-weight: 400;
 }
 
 .btn-primary {
@@ -245,43 +251,56 @@ body {
     border-bottom: none !important;
 }
 
-img{
-    border-radius:12px;
+img {
+    border-radius: 12px;
 }
 
 .btn-simple {
-    background-color: transparent; /* Không có nền */
-    border: none; /* Không có đường viền */
-    border-bottom: 1px solid #ccc; /* Đường viền nhẹ ở dưới */
-    padding: 5px 10px; /* Padding cho nút */
-    cursor: pointer; /* Con trỏ là ™pointer khi di chuột vào */
-    transition: border-bottom-color 0.3s ease; /* Hiệu ứng chuyển tiếp cho viền dưới */
+    background-color: transparent;
+    /* Không có nền */
+    border: none;
+    /* Không có đường viền */
+    border-bottom: 1px solid #ccc;
+    /* Đường viền nhẹ ở dưới */
+    padding: 5px 10px;
+    /* Padding cho nút */
+    cursor: pointer;
+    /* Con trỏ là ™pointer khi di chuột vào */
+    transition: border-bottom-color 0.3s ease;
+    /* Hiệu ứng chuyển tiếp cho viền dưới */
 }
 
 .btn-simple:hover {
-    border-bottom-color: #999; /* Màu viền dưới khi di chuột vào */
+    border-bottom-color: #999;
+    /* Màu viền dưới khi di chuột vào */
 }
 
-.btn-cart{
+.btn-cart {
     background-color: rgb(150, 150, 150);
-    border-color: rgb(150, 150, 150);    
+    border-color: rgb(150, 150, 150);
 }
 
 
 /* CSS cho biểu tượng giỏ hàng khi rung qua trái và rung qua phải */
 @keyframes shake {
     0% {
-        transform: translateX(-5px); /* Rung qua trái */
+        transform: translateX(-5px);
+        /* Rung qua trái */
     }
+
     50% {
-        transform: translateX(5px); /* Rung qua phải */
+        transform: translateX(5px);
+        /* Rung qua phải */
     }
+
     100% {
-        transform: translateX(-5px); /* Rung qua trái */
+        transform: translateX(-5px);
+        /* Rung qua trái */
     }
 }
 
 /* CSS cho biểu tượng giỏ hàng */
 .cart-icon-shake {
-    animation: shake 0.1s ease 3; /* Lặp lại vô hạn */
+    animation: shake 0.1s ease 3;
+    /* Lặp lại vô hạn */
 }

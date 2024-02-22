@@ -34,7 +34,7 @@
                     <span class="product-detail-old-price">${{ $product->price }}</span>
                     <span class="product-detail-new-price">${{ $product->discount_price }}</span>
                     <span class="product-detail-discount badge badge-danger"></span>
-                </div>
+                </div>  
 
                 <a href="#" class="btn btn-simple mt-4" id="add-to-cart-btn"><i class="fas fa-shopping-cart"></i> Giỏ
                     hàng</a>
