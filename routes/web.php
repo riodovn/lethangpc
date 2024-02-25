@@ -30,11 +30,25 @@ Route::prefix('he-thong')->group(function () {
     Route::resource('products', ProductController::class)->names([
         'index'=>'admin.products.index',
         'create' => 'admin.products.create',
+        'store' => 'admin.products.store',
         'edit' => 'admin.products.edit',
         'destroy' => 'admin.products.destroy',
         'store'=>'admin.products.store',
         'update'=>'admin.products.update',
     ]);
+
+    // Thêm thông số kỹ thuật vào sản phẩm
+    Route::post('/edit/add-spec', [ProductController::class,'addSpec'])->name('admin.products.addSpec');
+    Route::delete('/edit/delete-spec/{id}', [ProductController::class,'deleteSpec'])->name('admin.products.deleteSpec');
+
+    // Thêm chính sách bảo hành cho sản phẩm
+    Route::post('/edit/add-warranty', [ProductController::class,'addWarranty'])->name('admin.products.addWarranty');
+    Route::delete('/edit/delete-warranty/{id}', [ProductController::class,'deleteWarranty'])->name('admin.products.deleteWarranty');
+
+    // Thêm các khuyến mãi/ưu đãi cho sản phẩm
+    Route::post('/edit/add-promotion', [ProductController::class,'addPromotion'])->name('admin.products.addPromotion');
+    Route::delete('/edit/delete-promotion/{id}', [ProductController::class,'deletePromotion'])->name('admin.products.deletePromotion');
+
     Route::resource('warranty_policies', WarrantyPolicyController::class)->names([
         'index' => 'admin.warranty_policies.index',
         'create' => 'admin.warranty_policies.create',
@@ -53,4 +67,7 @@ Route::prefix('he-thong')->group(function () {
 
     // Quản lý danh sách thông số kỹ thuật của sản phẩm
     Route::get('/technical-specifications', [AdminController::class, 'technicalSpecificationsList'])->name('admin.technical-specifications');
+
+    // Quản lý khuyến mãi 
+    Route::get('/promotions', [AdminController::class, 'promotionsList'])->name('admin.promotions');
 });

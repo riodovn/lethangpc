@@ -25,4 +25,9 @@ class AdminController extends Controller
     {
         return view('admin.danh-sach-thong-so-ky-thuat');
     }
+
+    public function promotionsList()
+    {
+        return view('admin.danh-sach-khuyen-mai');
+    }
 }
