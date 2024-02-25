@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateProductTechnicalSpecifications extends Migration
+class CreateProductWarrantyPoliciesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,13 @@ class CreateProductTechnicalSpecifications extends Migration
      */
     public function up()
     {
-        Schema::create('product_technical_specification', function (Blueprint $table) {
+        Schema::create('product_warranty_policies', function (Blueprint $table) {
             $table->unsignedBigInteger('product_id');
-            $table->unsignedBigInteger('technical_specification_id');
+            $table->unsignedBigInteger('warranty_policy_id');
             $table->foreign('product_id')->references('id')->on('products')->onDelete('cascade');
-            $table->foreign('technical_specification_id')->references('id')->on('technical_specifications')->onDelete('cascade');
+            $table->foreign('warranty_policy_id')->references('id')->on('warranty_policies')->onDelete('cascade');
             // Add other columns if necessary
-            $table->primary(['product_id', 'technical_specification_id']);
+            $table->primary(['product_id', 'warranty_policy_id']);
         });
     }
 
@@ -30,6 +30,6 @@ class CreateProductTechnicalSpecifications extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('product_technical_specifications');
+        Schema::dropIfExists('product_warranty_policies');
     }
 }

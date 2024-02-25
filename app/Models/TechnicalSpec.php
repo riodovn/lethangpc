@@ -17,7 +17,8 @@ class TechnicalSpec extends Model
 
     public $timestamps = true;
 
-    public function product(){
-        return $this->belongsTo(Product::class);
+    public function products()
+    {
+        return $this->belongsToMany(Product::class);
     }
 }

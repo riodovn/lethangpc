@@ -33,6 +33,8 @@
     <!-- summernote -->
     <link rel="stylesheet" href="{{ url('/') }}/adminLte3/dist/plugins/summernote/summernote-bs4.min.css">
 
+    <script src="{{ asset('vendor/jquery/jquery.min.js') }}"></script>
+
     @livewireStyles
 </head>
 
@@ -333,7 +335,6 @@
     <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
     <script src="{{ url('/') }}/adminLte3/dist/js/pages/dashboard.js"></script>
 
-    <script src="{{ asset('vendor/jquery/jquery.min.js') }}"></script>
     <script src="{{ asset('vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
 
     {{-- <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>

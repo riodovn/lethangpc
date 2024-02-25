@@ -14,6 +14,9 @@ class WarrantyPolicy extends Model
         'title',
         'content',
     ];
+
+    public $timestamps = true;
+
     public function products()
     {
         return $this->belongsToMany(Product::class);

@@ -36,7 +36,6 @@
                         <th>ID</th>
                         <th>Tên</th>
                         <th>Giá trị</th>
-                        <th>Sản phẩm</th>
                         <th>Thao tác</th>
                     </tr>
                 </thead>
@@ -47,7 +46,6 @@
                                 <td>{{ $technical_specification->id }}</td>
                                 <td>{{ $technical_specification->name }}</td>
                                 <td>{{ $technical_specification->value }}</td>
-                                <td>{{ $technical_specification->product->name }}</td>
                                 <td style="text-align: center">
                                     <button class="btn btn-sm btn-warning"
                                         wire:click="edit({{ $technical_specification->id }})">Chỉnh
@@ -87,7 +85,7 @@
                 </div>
                 <div class="modal-body">
                     <form wire:submit.prevent="store">
-                        <div class="form-group">
+                        {{-- <div class="form-group">
                             <label for="nameProduct" class="col-3">Sản phẩm</label>
                             <div class="col-12">
                                 <select wire:model="product_id" class="form-control" id="nameProduct">
@@ -101,7 +99,7 @@
                                     <span class="text-danger" style="font-size: 11.5px">{{ $message }}</span>
                                 @enderror
                             </div>
-                        </div>
+                        </div> --}}
 
                         <div class="form-group">
                             <label for="nameTechnicalSpec" class="col-6">Thông số kỹ thuật</label>
@@ -145,7 +143,7 @@
                 </div>
                 <div class="modal-body">
                     <form wire:submit.prevent="update">
-                        <div class="form-group">
+                        {{-- <div class="form-group">
                             <label for="nameProduct" class="col-3">Sản phẩm</label>
                             <div class="col-12">
                                 <select wire:model="product_id" class="form-control" id="nameProduct">
@@ -159,7 +157,7 @@
                                     <span class="text-danger" style="font-size: 11.5px">{{ $message }}</span>
                                 @enderror
                             </div>
-                        </div>
+                        </div> --}}
                         <div class="form-group">
                             <label for="nameTechnicalSpec" class="col-6">Thông số kỹ thuật</label>
                             <div class="col-12">

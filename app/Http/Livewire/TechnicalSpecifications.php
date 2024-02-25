@@ -48,7 +48,7 @@ class TechnicalSpecifications extends Component
         //dd($this->all());
 
         $this->validate([
-            'product_id' =>'required',
+            // 'product_id' =>'required',
             'name' =>'required',
             'value' =>'required',
         ]);
@@ -57,7 +57,7 @@ class TechnicalSpecifications extends Component
             $technical_specification = new TechnicalSpec();
             $technical_specification->name = $this->name;
             $technical_specification->value = $this->value;
-            $technical_specification->product_id = $this->product_id;
+            //$technical_specification->product_id = $this->product_id;
             $technical_specification->save();
 
             session()->flash('success', 'Tạo mới thông số kỹ thuật thành công!');
@@ -78,7 +78,7 @@ class TechnicalSpecifications extends Component
 
     public function edit($id){
         $technical_specification = TechnicalSpec::where('id', $id)->first();
-        $this->product_id = $technical_specification->product_id;
+        //$this->product_id = $technical_specification->product_id;
         $this->name = $technical_specification->name;
         $this->value = $technical_specification->value;
         $this->technical_specification_edit_id = $technical_specification->id;
@@ -88,7 +88,7 @@ class TechnicalSpecifications extends Component
 
     public function update(){
         $this->validate([
-            'product_id' =>'required',
+            //'product_id' =>'required',
             'name' =>'required',
             'value' =>'required',
         ]);
@@ -97,7 +97,7 @@ class TechnicalSpecifications extends Component
             $technical_specification = TechnicalSpec::where('id', $this->technical_specification_edit_id)->first();
             $technical_specification->name = $this->name;
             $technical_specification->value = $this->value;
-            $technical_specification->product_id = $this->product_id;
+            //$technical_specification->product_id = $this->product_id;
 
             $technical_specification->save();
 
