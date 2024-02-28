@@ -30,4 +30,12 @@ class AdminController extends Controller
     {
         return view('admin.danh-sach-khuyen-mai');
     }
+
+    public function bannersList(){
+        return view('admin.banners');
+    }
+
+    public function filesList(){
+        return view('admin.files');
+    }
 }

@@ -70,4 +70,10 @@ Route::prefix('he-thong')->group(function () {
 
     // Quản lý khuyến mãi 
     Route::get('/promotions', [AdminController::class, 'promotionsList'])->name('admin.promotions');
+
+    // Quản lý Banner/Slider
+    Route::get('/banners', [AdminController::class, 'bannersList'])->name('admin.banners');
+
+    // Quản lý files
+    Route::get('/files', [AdminController::class, 'filesList'])->name('admin.files');
 });
