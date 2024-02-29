@@ -49,6 +49,11 @@ Route::prefix('he-thong')->group(function () {
     Route::post('/edit/add-promotion', [ProductController::class,'addPromotion'])->name('admin.products.addPromotion');
     Route::delete('/edit/delete-promotion/{id}', [ProductController::class,'deletePromotion'])->name('admin.products.deletePromotion');
 
+    // Import Product từ file Excel
+    Route::get('/import-products', [ProductController::class,'importProducts'])->name('admin.import.products');
+
+    Route::post('/upload-products', [ProductController::class,'uploadProducts'])->name('admin.upload.products');
+
     Route::resource('warranty_policies', WarrantyPolicyController::class)->names([
         'index' => 'admin.warranty_policies.index',
         'create' => 'admin.warranty_policies.create',
