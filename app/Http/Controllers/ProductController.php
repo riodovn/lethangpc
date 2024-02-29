@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Imports\ProductsImport;
 use App\Models\Category;
 use App\Models\Product;
 use Illuminate\Http\Request;
@@ -14,6 +15,7 @@ use App\Models\TechnicalSpec;
 use App\Models\WarrantyPolicy;
 use Intervention\Image\ImageManagerStatic as Image_Tool;
 use Promotions;
+use Maatwebsite\Excel\Facades\Excel;
 
 class ProductController extends Controller
 {
@@ -269,5 +271,19 @@ class ProductController extends Controller
 
         session()->flash('success', 'Xoá khuyến mãi/ưu đãi thành công!!');
         return redirect()->back();
+    }
+
+    // Import products từ file Excel
+    public function importProducts(){
+        return view('admin.products.import-products');
+    }
+
+    public function uploadProducts(Request $request){
+        $file = $request->file('file');
+
+        //dd($file);
+        Excel::import(new ProductsImport, $file);
+        
+        return redirect()->route('admin.products.index')->with('success', 'Đã nhập sản phẩm hàng loạt từ file excel thành công!');
     }
 }
