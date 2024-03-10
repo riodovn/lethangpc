@@ -19,7 +19,7 @@ use App\Http\Controllers\WarrantyPolicyController;
 
 Route::get('/', [GuestController::class,'index'])->name('home');
 Route::get('products/{id}', [ProductController::class,'show'])->name('product.show');
-
+Route::get('/test',function(){return view('test');})->name('test');
 
 // Admin Group
 

@@ -49,15 +49,12 @@
                 </div>
             </div>
         </nav>
-
+ 
         @yield('content')
     </div>
 
     @include('layouts.includes.footer')
-
-    <!-- Footer -->
-
-
+ 
     {{-- Script lib --}}
     <script src="{{ asset('js/app.js') }}"></script>
     <script src="{{ asset('vendor/bootstrap/js/bootstrap.min.js') }}"></script>
