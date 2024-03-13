@@ -22,6 +22,9 @@ Route::get('products/{id}', [ProductController::class, 'show'])->name('product.s
 
 Route::get('/test-home', [GuestController::class, 'test_home'])->name('test_home');
 
+Route::get('/', [GuestController::class,'index'])->name('home');
+Route::get('products/{id}', [ProductController::class,'show'])->name('product.show');
+Route::get('/test',function(){return view('test');})->name('test');
 
 // Admin Group
 
