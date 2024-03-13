@@ -17,6 +17,11 @@ use App\Http\Controllers\WarrantyPolicyController;
 |
 */
 
+Route::get('/', [GuestController::class, 'index'])->name('home');
+Route::get('products/{id}', [ProductController::class, 'show'])->name('product.show');
+
+Route::get('/test-home', [GuestController::class, 'test_home'])->name('test_home');
+
 Route::get('/', [GuestController::class,'index'])->name('home');
 Route::get('products/{id}', [ProductController::class,'show'])->name('product.show');
 Route::get('/test',function(){return view('test');})->name('test');
@@ -24,35 +29,35 @@ Route::get('/test',function(){return view('test');})->name('test');
 // Admin Group
 
 Route::prefix('he-thong')->group(function () {
-    Route::get('/dashboard', [AdminController::class,'dashboard'])->name('admin.dashboard');
+    Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('admin.dashboard');
     // Thêm các route khác cho trang quản trị nếu cần
     // Quản lí sản phẩm 
     Route::resource('products', ProductController::class)->names([
-        'index'=>'admin.products.index',
+        'index' => 'admin.products.index',
         'create' => 'admin.products.create',
         'store' => 'admin.products.store',
         'edit' => 'admin.products.edit',
         'destroy' => 'admin.products.destroy',
-        'store'=>'admin.products.store',
-        'update'=>'admin.products.update',
+        'store' => 'admin.products.store',
+        'update' => 'admin.products.update',
     ]);
 
     // Thêm thông số kỹ thuật vào sản phẩm
-    Route::post('/edit/add-spec', [ProductController::class,'addSpec'])->name('admin.products.addSpec');
-    Route::delete('/edit/delete-spec/{id}', [ProductController::class,'deleteSpec'])->name('admin.products.deleteSpec');
+    Route::post('/edit/add-spec', [ProductController::class, 'addSpec'])->name('admin.products.addSpec');
+    Route::delete('/edit/delete-spec/{id}', [ProductController::class, 'deleteSpec'])->name('admin.products.deleteSpec');
 
     // Thêm chính sách bảo hành cho sản phẩm
-    Route::post('/edit/add-warranty', [ProductController::class,'addWarranty'])->name('admin.products.addWarranty');
-    Route::delete('/edit/delete-warranty/{id}', [ProductController::class,'deleteWarranty'])->name('admin.products.deleteWarranty');
+    Route::post('/edit/add-warranty', [ProductController::class, 'addWarranty'])->name('admin.products.addWarranty');
+    Route::delete('/edit/delete-warranty/{id}', [ProductController::class, 'deleteWarranty'])->name('admin.products.deleteWarranty');
 
     // Thêm các khuyến mãi/ưu đãi cho sản phẩm
-    Route::post('/edit/add-promotion', [ProductController::class,'addPromotion'])->name('admin.products.addPromotion');
-    Route::delete('/edit/delete-promotion/{id}', [ProductController::class,'deletePromotion'])->name('admin.products.deletePromotion');
+    Route::post('/edit/add-promotion', [ProductController::class, 'addPromotion'])->name('admin.products.addPromotion');
+    Route::delete('/edit/delete-promotion/{id}', [ProductController::class, 'deletePromotion'])->name('admin.products.deletePromotion');
 
     // Import Product từ file Excel
-    Route::get('/import-products', [ProductController::class,'importProducts'])->name('admin.import.products');
+    Route::get('/import-products', [ProductController::class, 'importProducts'])->name('admin.import.products');
 
-    Route::post('/upload-products', [ProductController::class,'uploadProducts'])->name('admin.upload.products');
+    Route::post('/upload-products', [ProductController::class, 'uploadProducts'])->name('admin.upload.products');
 
     Route::resource('warranty_policies', WarrantyPolicyController::class)->names([
         'index' => 'admin.warranty_policies.index',
@@ -61,7 +66,7 @@ Route::prefix('he-thong')->group(function () {
         'destroy' => 'admin.warranty_policies.destroy',
         'store' => 'admin.warranty_policies.store',
         'update' => 'admin.warranty_policies.update',
-        'show'=>'admin.warranty_policies.show'
+        'show' => 'admin.warranty_policies.show'
     ]);
 
     // Quản lý danh mục sản phẩm

@@ -1,6 +1,4 @@
 {
-    "/js/app.js": "/js/app.js",
-    "/css/app.css": "/css/app.css",
     "/vendor/bootstrap/css/bootstrap-grid.css": "/vendor/bootstrap/css/bootstrap-grid.css",
     "/vendor/bootstrap/css/bootstrap-grid.css.map": "/vendor/bootstrap/css/bootstrap-grid.css.map",
     "/vendor/bootstrap/css/bootstrap-grid.min.css": "/vendor/bootstrap/css/bootstrap-grid.min.css",
