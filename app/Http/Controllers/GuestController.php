@@ -15,7 +15,17 @@ class GuestController extends Controller
 {
     public function index()
     {
-        $products = Product::where('status','selling')->orderBy('id','DESC')->take(5)->get();
-        return view('trang-chu',compact('products'));
+        $categories = Category::orderBy('id','DESC')->take(6)->get();
+
+        $products = Product::where('status','selling')->orderBy('id','DESC')->take(8)->get();
+
+        //dd($products);
+
+        return view('trang-chu',compact('categories', 'products'));
+    }
+
+    public function test_home(){
+        //dd(1);
+        return view('test_home');
     }
 }
