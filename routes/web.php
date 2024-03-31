@@ -22,9 +22,11 @@ Route::get('products/{id}', [ProductController::class, 'show'])->name('product.s
 
 Route::get('/test-home', [GuestController::class, 'test_home'])->name('test_home');
 
-Route::get('/', [GuestController::class,'index'])->name('home');
-Route::get('products/{id}', [ProductController::class,'show'])->name('product.show');
-Route::get('/test',function(){return view('test');})->name('test');
+Route::get('/', [GuestController::class, 'index'])->name('home');
+Route::get('products/{id}', [ProductController::class, 'show'])->name('product.show');
+Route::get('/test', function () {
+    return view('test');
+})->name('test');
 
 // Admin Group
 
@@ -86,4 +88,7 @@ Route::prefix('he-thong')->group(function () {
 
     // Quản lý files
     Route::get('/files', [AdminController::class, 'filesList'])->name('admin.files');
+
+    // Quản lý setting của website
+    Route::get('/settings', [AdminController::class, 'settingList'])->name('admin.settings');
 });

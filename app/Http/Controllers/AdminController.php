@@ -20,7 +20,7 @@ class AdminController extends Controller
     {
         return view('admin.danh-sach-nguoi-dung');
     }
-    
+
     public function technicalSpecificationsList()
     {
         return view('admin.danh-sach-thong-so-ky-thuat');
@@ -31,11 +31,18 @@ class AdminController extends Controller
         return view('admin.danh-sach-khuyen-mai');
     }
 
-    public function bannersList(){
+    public function bannersList()
+    {
         return view('admin.banners');
     }
 
-    public function filesList(){
+    public function filesList()
+    {
         return view('admin.files');
+    }
+
+    public function settingList()
+    {
+        return view('admin.website-settings');
     }
 }
